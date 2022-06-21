@@ -1,0 +1,61 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Multiple user login</title>
+  </head>
+  <body>
+  <div class="content">
+    <div>
+      <div>
+        <!-- <div class="col-md-6 order-md-2">
+          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+        </div> -->
+        <div>
+          <div>
+            <div>
+              <div>
+                  <div>
+                </div>
+
+              <span>
+                {% if msg %}
+                    {{ msg | safe }}
+                {% else %}
+                    Login page
+                {% endif %}
+              </span>
+                <form  method="post">
+                    {% csrf_token %}
+                  <div>
+                    <label for="username">Username</label>
+                      {{ form.username }}
+                  </div>
+                  <div>
+                    <label for="username">Password</label>
+                    {{ form.password }}
+                  </div>
+
+                  <div>
+                    <label><span class="caption">Remember me</span>
+                      <input type="checkbox" checked="checked"/>
+                      <div></div>
+                    </label>
+                  </div>
+
+                  <input type="submit" value="Log In">
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
